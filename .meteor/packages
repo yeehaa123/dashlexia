@@ -8,3 +8,7 @@ insecure
 preserve-inputs
 coffeescript
 bootstrap
+
+router
+page-js-ie-support
+HTML5-History-API
