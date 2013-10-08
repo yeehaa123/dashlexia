@@ -5,4 +5,5 @@ questionsData = [
 ]
 
 Template.questionsList.helpers
-  questions: questionsData
+  questions: ->
+    Questions.find()
