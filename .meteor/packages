@@ -12,3 +12,5 @@ bootstrap
 router
 page-js-ie-support
 HTML5-History-API
+accounts-ui-bootstrap-dropdown
+accounts-password
