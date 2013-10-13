@@ -6,4 +6,4 @@ questionsData = [
 
 Template.questionsList.helpers
   questions: ->
-    Questions.find()
+    Questions.find({}, {sort: {submitted: -1}})

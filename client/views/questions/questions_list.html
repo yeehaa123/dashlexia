@@ -4,5 +4,7 @@
       {{> questionItem}}
     {{/each}}
   </div>
-  {{> questionSubmit}}
+  {{# if currentUser}}
+    {{> questionSubmit}}
+  {{/if}}
 </template>

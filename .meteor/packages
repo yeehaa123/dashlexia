@@ -4,13 +4,15 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-insecure
 preserve-inputs
 coffeescript
-bootstrap
 
 router
 page-js-ie-support
 HTML5-History-API
-accounts-ui-bootstrap-dropdown
 accounts-password
+
+spin
+accounts-ui-bootstrap-dropdown
+bootstrap
+errors

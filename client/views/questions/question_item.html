@@ -1,8 +1,10 @@
 <template name="questionItem">
   <div class="question">
     <div class="question-content">
-      <h3><p>{{title}}</p><span>{{domain}}</span></h3>
-      <a href="{{questionPagePath this}}" class="info btn">More Info</a>
+      <h3><a href="{{questionPagePath this}}">{{title}}</a></h3>
+      <p>submitted by {{author}}
+      {{#if ownQuestion}}<a href="{{questionEditPath this}}">Edit</a>{{/if}}
+      </p>
     </div>
   </div>
 </template>

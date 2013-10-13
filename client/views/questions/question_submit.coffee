@@ -4,5 +4,9 @@ Template.questionSubmit.events
     question =
       title: $(e.target).find('[name=question]').val()
 
-    question._id = Questions.insert(question)
-    Meteor.Router.to('questionPage', question)
+
+    Meteor.call 'post', question, (error, id) ->
+      if error
+        Errors.throw(error.reason)
+      else
+        Meteor.Router.to('questionPage', id)
