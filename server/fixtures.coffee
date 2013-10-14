@@ -1,12 +1,27 @@
 if Questions.find().count() is 0
-  Questions.insert
-    title: 'What am I doing here?'
-    author: 'someone'
+  now = new Date().getTime()
+  day = 3600 * 1000
 
-  Questions.insert
-    title: 'What are they doing here?'
-    author: 'someone'
+  yeehaaId = Meteor.users.insert
+    profile: { name: "Jan Hein Hoogstad" }
 
-  Questions.insert
-    title: 'Why are not we leaving?'
-    author: 'someone'
+  yeehaa = Meteor.users.findOne(yeehaaId)
+
+  marijnId = Meteor.users.insert
+    profile: { name: "Marijn Koolen" }
+
+  marijn = Meteor.users.findOne(marijnId)
+  
+  questionId = Questions.insert
+    title: "What am I doing here?"
+    userId: yeehaa._id
+    author: yeehaa.profile.name
+    submitted: now - 7 * day
+    answersCount: 1
+    
+  Answers.insert
+    questionId: questionId
+    userId: marijn._id
+    author: marijn.profile.name
+    submitted: now - 5 * day
+    body: "Because you have to Jan Hein"

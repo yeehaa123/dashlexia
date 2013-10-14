@@ -22,7 +22,7 @@ Meteor.methods
       userId: user._id
       author: user.username
       submitted: new Date().getTime()
+      answersCount: 0
     )
     
     questionId = Questions.insert(question)
-    questionId

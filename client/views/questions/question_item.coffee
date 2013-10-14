@@ -1,3 +1,3 @@
 Template.questionItem.helpers
-  ownQuestion: () ->
+  ownQuestion: ->
     @userId is Meteor.userId()

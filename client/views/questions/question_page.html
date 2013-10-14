@@ -1,5 +1,17 @@
 <template name="questionPage">
   {{#with currentQuestion}}
     {{> questionItem}}
+
+    <ul class="answers">
+      {{#each answers}}
+        {{> answer}}
+      {{/each}}
+    </ul>
+
+    {{#if currentUser}}
+      {{> answerSubmit}}
+    {{else}}
+      <p>Please log in to answer a question.</p>
+    {{/if}}
   {{/with}}
 </template>
