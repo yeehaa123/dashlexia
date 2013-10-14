@@ -21,4 +21,8 @@ Meteor.methods
 
     Questions.update(answer.questionId, {$inc: {answersCount: 1}})
 
-    Answers.insert(answer)
+    answer._id = Answers.insert(answer)
+
+    createAnswerNotification(answer)
+
+    answer._id
