@@ -23,6 +23,20 @@ Meteor.methods
       author: user.username
       submitted: new Date().getTime()
       answersCount: 0
+      upvoters: []
+      votes: 0
     )
     
     questionId = Questions.insert(question)
+
+  upvote: (questionId) ->
+    user = Meteor.user()
+    if not user
+      throw new Meteor.Error(401, "You need to login to upvote")
+
+    Questions.update 
+      _id: questionId,
+      upvoters: {$ne: user.id}
+    ,
+      $addToSet: {upvoters: user._id}
+      $inc: {votes: 1}

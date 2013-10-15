@@ -1,10 +1,27 @@
+<template name="newQuestions">
+  {{> questionsList options}}
+</template>
+
+<template name="bestQuestions">
+  {{> questionsList options}}
+</template>
+
 <template name="questionsList">
+  {{# if currentUser}}
+    {{> questionSubmit}}
+  {{/if}}
+
   <div class="questions">
     {{#each questions}}
       {{> questionItem}}
     {{/each}}
+
+    {{#if questionsReady}}
+      {{#unless allQuestionsLoaded}}
+        <a class="load-more" href="#">Load more</a>
+      {{/unless}}
+    {{else}}
+      <div>{{> spinner}}</div>
+    {{/if}}
   </div>
-  {{# if currentUser}}
-    {{> questionSubmit}}
-  {{/if}}
 </template>

@@ -4,6 +4,7 @@
     "accounts-ui-bootstrap-dropdown": {},
     "spin": {},
     "accounts-ui-bootstrap-3": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "paginated-subscription": {}
   }
 }

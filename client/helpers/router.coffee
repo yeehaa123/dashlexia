@@ -1,5 +1,7 @@
 Meteor.Router.add
-  '/': 'questionsList'
+  '/': {to: 'newQuestions', as: 'home'}
+  '/best': 'bestQuestions'
+  '/new': 'newQuestions'
   
   '/questions/:_id':
     to: 'questionPage'
